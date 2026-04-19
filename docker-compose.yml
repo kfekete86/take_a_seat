@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  f1-facebook-poster:
+    build: .
+    container_name: f1-facebook-poster
+    restart: unless-stopped
+    environment:
+      - FACEBOOK_PAGE_ACCESS_TOKEN=${FACEBOOK_PAGE_ACCESS_TOKEN}
+      - FACEBOOK_PAGE_ID=${FACEBOOK_PAGE_ID}
+      - CRON_SCHEDULE=${CRON_SCHEDULE:-0 * * * *}
+      - AUTO_POST_ENABLED=${AUTO_POST_ENABLED:-true}
+      - F1_SEASON=${F1_SEASON}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    env_file:
+      - .env
+    # Uncomment if you want to use a volume for persistence
+    # volumes:
+    #   - ./data:/app/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
