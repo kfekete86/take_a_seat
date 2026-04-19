@@ -11,7 +11,7 @@ export function formatSessionType(sessionName: string): string {
   const typeMap: Record<string, string> = {
     'Race': 'Race',
     'Qualifying': 'Qualifying',
-    'Sprint': 'Sprint',
+    'Sprint': 'Sprint Race',
     'Sprint Qualifying': 'Sprint Qualifying',
     'Practice 1': 'Free Practice 1',
     'Practice 2': 'Free Practice 2',
