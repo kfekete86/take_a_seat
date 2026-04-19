@@ -1,0 +1,32 @@
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+*.md
+!README.md
+
+# Development files
+.env.example
+.eslintrc.json
+
+# Git
+.git
+.gitignore
+.github
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Source files (we only need compiled code)
+src
+
+# Tests
+__tests__
+*.test.ts
+*.spec.ts
